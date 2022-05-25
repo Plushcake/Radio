@@ -2,43 +2,61 @@ package ru.netology.domain;
 
 public class Radio {
 
-    int maxVolume = 10;
-    int maxStation = 9;
-    int minVolume = 0;
-    int minStation = 0;
+    private int maxVolume = 10;
+    private int maxStation = 9;
+    private int minVolume = 0;
+    private int minStation = 0;
+    private int volumeUp;
+    private int volumeDown;
+    private int nextStation;
+
 
     // Уровень громкости звука.
-    public int turnUpTheVolume(int volumeUp) {
+    public void setTurnUpTheVolume(int volumeUp) {
         if (volumeUp < maxVolume) {
             volumeUp = volumeUp + 1;
         }
         if (volumeUp > maxVolume) {
             volumeUp = maxVolume;
         }
+        this.volumeUp = volumeUp;
+    }
+
+    public int getTurnUpTheVolume() {
         return volumeUp;
     }
 
-    public  int turnDownTheVolume(int volumeDown){
+
+    public void setTurnDownTheVolume(int volumeDown) {
         if (volumeDown < maxVolume) {
             volumeDown = volumeDown - 1;
         }
         if (volumeDown < minVolume) {
-            volumeDown = minVolume;
+            return;
         }
-        return  volumeDown;
+        this.volumeDown = volumeDown;
+    }
+
+    public int getTurnDownTheVolume() {
+        return volumeDown;
     }
 
     //Переключение радио станций.
 
-    public  int nextStation(int nextStation) {
-        if (nextStation > maxStation ) {
-            nextStation = minStation;
+    public void setNextAnsPrevStation(int nextStation) {
+        if (nextStation > maxStation) {
+            return;
 
         }
-        if (nextStation < minStation ) {
+        if (nextStation < minStation) {
             nextStation = maxStation;
         }
+        this.nextStation = nextStation;
+    }
+
+    public int getNextAnsPrevStation() {
         return nextStation;
     }
+
 
 }
