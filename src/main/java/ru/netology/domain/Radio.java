@@ -9,15 +9,34 @@ public class Radio {
     private int volumeUp;
     private int volumeDown;
     private int nextStation;
+    public int checkStation;
+
+    //Проверка доступности радиостанций.
+    public void setCheckYourRadioStationNumber(int checkStation) {
+
+        if (checkStation <= maxStation & checkStation >= minStation) {
+            this.checkStation = checkStation;
+            setNextAndPrevStation(checkStation);
+        }
+        return;
+
+    }
+
+    public int getCheckYourRadioStationNumber() {
+        return checkStation;
+    }
 
 
     // Уровень громкости звука.
     public void setTurnUpTheVolume(int volumeUp) {
+
         if (volumeUp < maxVolume) {
             volumeUp = volumeUp + 1;
         }
-        if (volumeUp > maxVolume) {
-            volumeUp = maxVolume;
+        if (volumeUp >= maxVolume) {
+            volumeUp = 10;
+        } else if (volumeUp < 0) {
+            volumeUp = 0;
         }
         this.volumeUp = volumeUp;
     }
@@ -28,11 +47,14 @@ public class Radio {
 
 
     public void setTurnDownTheVolume(int volumeDown) {
-        if (volumeDown < maxVolume) {
+
+        if (volumeDown <= maxVolume) {
             volumeDown = volumeDown - 1;
         }
         if (volumeDown < minVolume) {
             return;
+        } else if (volumeDown >= 11) {
+            volumeDown = 10;
         }
         this.volumeDown = volumeDown;
     }
@@ -41,22 +63,25 @@ public class Radio {
         return volumeDown;
     }
 
-    //Переключение радио станций.
+    //Переключение радиостанций.
 
-    public void setNextAnsPrevStation(int nextStation) {
-        if (nextStation > maxStation) {
+    public void setNextAndPrevStation(int checkStation) {
+
+        if (checkStation > maxStation) {
             return;
-
         }
-        if (nextStation < minStation) {
-            nextStation = maxStation;
+        if (checkStation < minStation) {
+            checkStation = maxStation;
         }
-        this.nextStation = nextStation;
+        this.nextStation = checkStation;
     }
 
-    public int getNextAnsPrevStation() {
+    public int getNextAndPrevStation() {
+
         return nextStation;
     }
 
 
 }
+
+//Тест дизайн. Минимум Максимум Середина Минзагр Максзагр
