@@ -67,29 +67,6 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void test1CheckYourRadioStationNumber() {
-        Radio radioman = new Radio();
-
-        radioman.setCheckYourRadioStationNumber(27);
-
-        int actual = radioman.getCheckYourRadioStationNumber();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void test2CheckYourRadioStationNumber() {
-        Radio radioman = new Radio();
-
-        radioman.setCheckYourRadioStationNumber(3);
-
-        int actual = radioman.getCheckYourRadioStationNumber();
-        int expected = 3;
-
-        assertEquals(expected, actual);
-    }
 
     // Уровень увеличения громкости звука.
     @Test
