@@ -1,19 +1,21 @@
 package ru.netology.domain;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
-    //Проверка доступности радиостанций.
+    //Переключение каналов Радиостанции.
     @Test
     void testMinimumCheckYourRadioStationNumber() {
         Radio radioman = new Radio();
 
-        radioman.setCheckYourRadioStationNumber(1);
+        radioman.setEnterStation(1);
+        radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getCheckYourRadioStationNumber();
+        int actual = radioman.getEnterStation();
         int expected = 1;
 
         assertEquals(expected, actual);
@@ -23,9 +25,10 @@ public class RadioTest {
     void testMaximumCheckYourRadioStationNumber() {
         Radio radioman = new Radio();
 
-        radioman.setCheckYourRadioStationNumber(9);
+        radioman.setEnterStation(9);
+        radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getCheckYourRadioStationNumber();
+        int actual = radioman.getEnterStation();
         int expected = 9;
 
         assertEquals(expected, actual);
@@ -35,9 +38,10 @@ public class RadioTest {
     void testMiddleCheckYourRadioStationNumber() {
         Radio radioman = new Radio();
 
-        radioman.setCheckYourRadioStationNumber(5);
+        radioman.setEnterStation(5);
+        radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getCheckYourRadioStationNumber();
+        int actual = radioman.getEnterStation();
         int expected = 5;
 
         assertEquals(expected, actual);
@@ -47,10 +51,11 @@ public class RadioTest {
     void testMinimumBorderCheckYourRadioStationNumber() {
         Radio radioman = new Radio();
 
-        radioman.setCheckYourRadioStationNumber(-1);
+        radioman.setEnterStation(-1);
+        radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getCheckYourRadioStationNumber();
-        int expected = 0;
+        int actual = radioman.getEnterStation();
+        int expected = 9;
 
         assertEquals(expected, actual);
     }
@@ -59,23 +64,25 @@ public class RadioTest {
     void testMaximumBorderCheckYourRadioStationNumber() {
         Radio radioman = new Radio();
 
-        radioman.setCheckYourRadioStationNumber(11);
+        radioman.setEnterStation(11);
+        radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getCheckYourRadioStationNumber();
+        int actual = radioman.getEnterStation();
         int expected = 0;
 
         assertEquals(expected, actual);
     }
 
 
-    // Уровень увеличения громкости звука.
+    // Уровень увеличения громкости звука.(Up)
     @Test
     void testMinimumTurnUpTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnUpTheVolume(1);
+        radioman.setCheckVolume(1);
+        radioman.checkYourVolumeUpNumber();
 
-        int actual = radioman.getTurnUpTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 2;
 
         assertEquals(expected, actual);
@@ -85,9 +92,10 @@ public class RadioTest {
     void testMaximumTurnUpTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnUpTheVolume(8);
+        radioman.setCheckVolume(8);
+        radioman.checkYourVolumeUpNumber();
 
-        int actual = radioman.getTurnUpTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 9;
 
         assertEquals(expected, actual);
@@ -97,9 +105,10 @@ public class RadioTest {
     void testMiddleTurnUpTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnUpTheVolume(5);
+        radioman.setCheckVolume(5);
+        radioman.checkYourVolumeUpNumber();
 
-        int actual = radioman.getTurnUpTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 6;
 
         assertEquals(expected, actual);
@@ -109,9 +118,10 @@ public class RadioTest {
     void testMinimumBorderTurnUpTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnUpTheVolume(-2);
+        radioman.setCheckVolume(-2);
+        radioman.checkYourVolumeUpNumber();
 
-        int actual = radioman.getTurnUpTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 0;
 
         assertEquals(expected, actual);
@@ -121,22 +131,25 @@ public class RadioTest {
     void testMaximumBorderTurnUpTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnUpTheVolume(11);
+        radioman.setCheckVolume(11);
+        radioman.checkYourVolumeUpNumber();
 
-        int actual = radioman.getTurnUpTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 10;
 
         assertEquals(expected, actual);
     }
 
-    // Уровень уменьшения громкости звука.
+
+    // Уровень уменьшения громкости звука.(Down)
     @Test
     void testMinimumTurnDownTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnDownTheVolume(2);
+        radioman.setCheckVolume(2);
+        radioman.checkYourVolumeDownNumber();
 
-        int actual = radioman.getTurnDownTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 1;
 
 
@@ -147,9 +160,10 @@ public class RadioTest {
     void testMaximumTurnDownTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnDownTheVolume(10);
+        radioman.setCheckVolume(10);
+        radioman.checkYourVolumeDownNumber();
 
-        int actual = radioman.getTurnDownTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 9;
 
         assertEquals(expected, actual);
@@ -159,9 +173,10 @@ public class RadioTest {
     void testMiddleTurnDownTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnDownTheVolume(6);
+        radioman.setCheckVolume(6);
+        radioman.checkYourVolumeDownNumber();
 
-        int actual = radioman.getTurnDownTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 5;
 
         assertEquals(expected, actual);
@@ -171,9 +186,10 @@ public class RadioTest {
     void testMinimumBorderTurnDownTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnDownTheVolume(-2);
+        radioman.setCheckVolume(-3);
+        radioman.checkYourVolumeDownNumber();
 
-        int actual = radioman.getTurnDownTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 0;
 
         assertEquals(expected, actual);
@@ -183,77 +199,16 @@ public class RadioTest {
     void testMaximumBorderTurnDownTheVolume() {
         Radio radioman = new Radio();
 
-        radioman.setTurnDownTheVolume(12);
+        radioman.setCheckVolume(12);
+        radioman.checkYourVolumeDownNumber();
 
-        int actual = radioman.getTurnDownTheVolume();
+        int actual = radioman.getCheckVolume();
         int expected = 10;
 
         assertEquals(expected, actual);
     }
 
-
-
-    //Переключение радиостанции.
-    @Test
-    void testMinimumNextAndPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setNextAndPrevStation(1);
-
-        int actual = radioman.getNextAndPrevStation();
-        int expected = 1;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void testMaximumNextAndPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setNextAndPrevStation(9);
-
-        int actual = radioman.getNextAndPrevStation();
-        int expected = 9;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void testMiddleNextAndPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setNextAndPrevStation(5);
-
-        int actual = radioman.getNextAndPrevStation();
-        int expected = 5;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void testMinimumBorderNextAndPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setNextAndPrevStation(-2);
-
-        int actual = radioman.getNextAndPrevStation();
-        int expected = 9;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void testMaximumBorderNextAndPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setNextAndPrevStation(11);
-
-        int actual = radioman.getNextAndPrevStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-
 }
+
+
 
