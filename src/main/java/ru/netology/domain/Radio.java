@@ -4,10 +4,9 @@ public class Radio {
 
     private String upVol = "+";
     private String downVol = "-";
-
     private String nextStation = "next";
-
     private String prevStation = "prev";
+
     private int maxVolume = 10;
     private int maxStation = 9;
     private int minVolume = 0;
@@ -15,9 +14,9 @@ public class Radio {
 
     private int checkStation;
     private int checkVolume;
+
     private String nextVolUp;
     private String nextVolDown;
-
     private String nextRadiostation;
     private String prevRadiostation;
 
@@ -25,6 +24,7 @@ public class Radio {
     //Переключение каналов радиостанции Prev и Next.
     //NEXT.
     public void setRadiostationNext(String nextRadiostation) {
+
         this.nextRadiostation = nextRadiostation;
     }
 
