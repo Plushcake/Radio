@@ -2,10 +2,6 @@ package ru.netology.domain;
 
 public class Radio {
 
-    private String upVol = "+";
-    private String downVol = "-";
-    private String nextStation = "next";
-    private String prevStation = "prev";
 
     private int maxVolume = 10;
     private int maxStation = 9;
@@ -15,53 +11,24 @@ public class Radio {
     private int checkStation;
     private int checkVolume;
 
-    private String nextVolUp;
-    private String nextVolDown;
-    private String nextRadiostation;
-    private String prevRadiostation;
+    public int stationSwitching = -1; //Прямое указание номера для радиостанции.
 
 
-    //Переключение каналов радиостанции Prev и Next.
-    //NEXT.
-    public void setRadiostationNext(String nextRadiostation) {
-
-        this.nextRadiostation = nextRadiostation;
-    }
-
-    public String getRadiostationNext() {
-        return nextRadiostation;
-    }
-
-    public void radiostationNextCalculate() {
-        if (nextRadiostation == nextStation) ;
-        return;
-    }
-
-
-    //PREV
-    public void setRadiostationPrev(String prevRadiostation) {
-        this.prevRadiostation = prevRadiostation;
-    }
-
-    public String getRadiostationPrev() {
-        return prevRadiostation;
-    }
-
-    public void radiostationPrevCalculate() {
-        if (prevRadiostation == prevStation) {
-            return;
-        }
+    //Прямое указание номера для радиостанции.
+    public void radioStationSwitching() {
+        this.stationSwitching = stationSwitching;
+        setEnterStation(stationSwitching);
     }
 
 
     //Переключение каналов Радиостанции.
-
     public void setEnterStation(int checkStation) {
 
         this.checkStation = checkStation;
     }
 
     public int getEnterStation() {
+
         return checkStation;
     }
 
@@ -77,6 +44,7 @@ public class Radio {
         return;
     }
 
+
     //Переключение уровня громкости звука.
 
     public void setCheckVolume(int checkVolume) {
@@ -87,23 +55,6 @@ public class Radio {
     public int getCheckVolume() {
         return checkVolume;
     }
-
-
-    //Уровень звука +.
-    public void setNextVolumeUpCalculate(String nextUp) {
-        this.nextVolUp = nextUp;
-    }
-
-    public String getNextVolumeUpCalculate() {
-        return nextVolUp;
-    }
-
-    public void nextVolumUpCalculate() {
-        if (nextVolUp == upVol) {
-            return;
-        }
-    }
-
 
     //Переключение уровня громкости звука - больше (Up).
     public void checkYourVolumeUpNumber() {
@@ -117,22 +68,6 @@ public class Radio {
         }
         checkVolume = minVolume;
         return;
-    }
-
-
-    //Уровень звука -.
-    public void setNextVolumeDownCalculate(String nextDown) {
-        this.nextVolDown = nextDown;
-    }
-
-    public String getNextVolumeDownCalculate() {
-        return nextVolDown;
-    }
-
-    public void nextVolumeDownCalculate() {
-        if (nextVolDown == downVol) {
-            return;
-        }
     }
 
 
