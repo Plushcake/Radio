@@ -236,33 +236,17 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
-
-    //Next
     @Test
-    void testNextStation() {
+    void testNext() {
         Radio radioman = new Radio();
 
-        radioman.setNextStation(10);
+        radioman.next();
         radioman.checkYourRadioStationNumber();
 
-        int actual = radioman.getNextStation();
-        int expected = 0;
+        int actual = radioman.getEnterStation();
+        int exptcted = radioman.getEnterStation();
 
-        assertEquals(expected, actual);
-    }
-
-    //Prev
-    @Test
-    void testPrevStation() {
-        Radio radioman = new Radio();
-
-        radioman.setPrevStation(-1);
-        radioman.checkYourRadioStationNumber();
-
-        int actual = radioman.getPrevStation();
-        int expected = 9;
-
-        assertEquals(expected, actual);
+        assertEquals(exptcted, actual);
     }
 
 }

@@ -10,38 +10,23 @@ public class Radio {
 
     private int checkStation;
     private int checkVolume;
-    private int next;
-    private int prev;
+    public int stationSwitching = 5; //Прямое указание номера для радиостанции.
+    
 
 
-    public int stationSwitching = -1; //Прямое указание номера для радиостанции.
 
 
-    //Next.
-    public void setNextStation(int next) {
-        this.next = next;
-        setEnterStation(next);
-    }
+    //NEXT    NEXT   NEXT   NEXT   NEXT
 
-    public int getNextStation() {
+    public void next() {
+        stationSwitching++;
+        setEnterStation(stationSwitching);
 
-        return checkStation;
-    }
-
-    //Prev.
-    public void setPrevStation(int prev) {
-        this.prev = prev;
-        setEnterStation(prev);
-    }
-
-    public int getPrevStation() {
-
-        return checkStation;
     }
 
     //Прямое указание номера для радиостанции.
     public void radioStationSwitching() {
-        this.stationSwitching = stationSwitching;
+        //this.stationSwitching = stationSwitching;
         setEnterStation(stationSwitching);
     }
 
