@@ -10,9 +10,34 @@ public class Radio {
 
     private int checkStation;
     private int checkVolume;
+    private int next;
+    private int prev;
+
 
     public int stationSwitching = -1; //Прямое указание номера для радиостанции.
 
+
+    //Next.
+    public void setNextStation(int next) {
+        this.next = next;
+        setEnterStation(next);
+    }
+
+    public int getNextStation() {
+
+        return checkStation;
+    }
+
+    //Prev.
+    public void setPrevStation(int prev) {
+        this.prev = prev;
+        setEnterStation(prev);
+    }
+
+    public int getPrevStation() {
+
+        return checkStation;
+    }
 
     //Прямое указание номера для радиостанции.
     public void radioStationSwitching() {
@@ -53,6 +78,7 @@ public class Radio {
     }
 
     public int getCheckVolume() {
+
         return checkVolume;
     }
 

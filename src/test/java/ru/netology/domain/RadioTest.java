@@ -237,6 +237,34 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
+    //Next
+    @Test
+    void testNextStation() {
+        Radio radioman = new Radio();
+
+        radioman.setNextStation(10);
+        radioman.checkYourRadioStationNumber();
+
+        int actual = radioman.getNextStation();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    //Prev
+    @Test
+    void testPrevStation() {
+        Radio radioman = new Radio();
+
+        radioman.setPrevStation(-1);
+        radioman.checkYourRadioStationNumber();
+
+        int actual = radioman.getPrevStation();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
 }
 
 
