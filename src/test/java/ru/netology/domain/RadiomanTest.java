@@ -258,7 +258,7 @@ class RadiomanTest {
         radio.setSwitchingData(3);
 
         int actual = radio.getSwitchingData();
-        int expected = radio.getSwitchingData();
+        int expected = 3;
 
         assertEquals(actual, expected);
     }
@@ -267,10 +267,10 @@ class RadiomanTest {
     void test2SwitchingData() {
         Radioman radio = new Radioman();
 
-        radio.setSwitchingData(0);
+        radio.setSwitchingData(5);
 
         int actual = radio.getSwitchingData();
-        int expected = radio.getSwitchingData();
+        int expected = 5;
 
         assertEquals(actual, expected);
     }
@@ -282,7 +282,7 @@ class RadiomanTest {
         radio.setSwitchingData(12);
 
         int actual = radio.getSwitchingData();
-        int expected = radio.getSwitchingData();
+        int expected = 0;
 
         assertEquals(actual, expected);
     }
@@ -294,7 +294,7 @@ class RadiomanTest {
         radio.setSwitchingData(-8);
 
         int actual = radio.getSwitchingData();
-        int expected = radio.getSwitchingData();
+        int expected = 0;
 
         assertEquals(actual, expected);
     }

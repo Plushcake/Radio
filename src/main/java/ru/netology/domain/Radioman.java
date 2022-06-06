@@ -74,6 +74,7 @@ public class Radioman {
         }
         if (enterStationUp >= 10) {
             enterStationUp = minStation;
+            return;
         }
     }
 
@@ -84,6 +85,7 @@ public class Radioman {
         }
         if (enterStationDown <= -1 | enterStationDown > 10) {
             enterStationDown = maxStation;
+            return;
         }
     }
 
@@ -91,8 +93,9 @@ public class Radioman {
     public void setSwitchingData(int switchingData) {
         this.switchingData = switchingData;
         if (switchingData <= maxStation & switchingData >= minStation) {
+            return;
         }
-        switchingData = minStation;
+            this.switchingData = 0;
     }
 
     public int getSwitchingData() {
