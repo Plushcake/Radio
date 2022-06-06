@@ -11,27 +11,20 @@ public class Radio {
     private int checkStation;
     private int checkVolume;
     public int stationSwitching = 5; //Прямое указание номера для радиостанции.
-    
 
 
+    //NEXT
 
-
-    //NEXT    NEXT   NEXT   NEXT   NEXT
-
-    public void next() {
-        stationSwitching++;
-        setEnterStation(stationSwitching);
-
-    }
+    //PREV
 
     //Прямое указание номера для радиостанции.
     public void radioStationSwitching() {
-        //this.stationSwitching = stationSwitching;
+
         setEnterStation(stationSwitching);
     }
 
 
-    //Переключение каналов Радиостанции.
+    //Код данных Get и Set для переключения каналов.
     public void setEnterStation(int checkStation) {
 
         this.checkStation = checkStation;
@@ -42,11 +35,11 @@ public class Radio {
         return checkStation;
     }
 
+    //Переключение каналов Радиостанции. (Код вычесления валидности введенного числа от 0 до 9)
     public void checkYourRadioStationNumber() {
         if (checkStation <= maxStation & checkStation >= minStation) {
             return;
-        }
-        if (checkStation < minStation) {
+        } else if (checkStation < minStation) {
             checkStation = maxStation;
             return;
         }
@@ -72,8 +65,7 @@ public class Radio {
         if (checkVolume <= maxVolume & checkVolume >= minVolume) {
             checkVolume++;
             return;
-        }
-        if (checkVolume > maxVolume) {
+        } else if (checkVolume > maxVolume) {
             checkVolume = maxVolume;
             return;
         }
@@ -87,8 +79,7 @@ public class Radio {
         if (checkVolume <= maxVolume & checkVolume >= minVolume) {
             checkVolume--;
             return;
-        }
-        if (checkVolume > maxVolume) {
+        } else if (checkVolume > maxVolume) {
             checkVolume = maxVolume;
             return;
         }

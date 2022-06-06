@@ -224,6 +224,7 @@ public class RadioTest {
 
     }
 
+    //Прямое указание номера для радиостанции.
     @Test
     void testStationSwitchings() {
         Radio radioman = new Radio();
@@ -235,18 +236,6 @@ public class RadioTest {
         int expected = radioman.getEnterStation();
 
         assertEquals(expected, actual);
-    }
-    @Test
-    void testNext() {
-        Radio radioman = new Radio();
-
-        radioman.next();
-        radioman.checkYourRadioStationNumber();
-
-        int actual = radioman.getEnterStation();
-        int exptcted = radioman.getEnterStation();
-
-        assertEquals(exptcted, actual);
     }
 
 }
