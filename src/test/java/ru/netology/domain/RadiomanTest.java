@@ -10,7 +10,7 @@ class RadiomanTest {
     void test1UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(14);
+        radio.setVolumeUp(14);
 
         int actual = radio.getUpVolum();
         int expected = 10;
@@ -22,7 +22,7 @@ class RadiomanTest {
     void test2UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(0);
+        radio.setVolumeUp(0);
 
         int actual = radio.getUpVolum();
         int expected = 0;
@@ -34,7 +34,7 @@ class RadiomanTest {
     void test3UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(11);
+        radio.setVolumeUp(11);
 
         int actual = radio.getUpVolum();
         int expected = 10;
@@ -46,7 +46,7 @@ class RadiomanTest {
     void test4UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(9);
+        radio.setVolumeUp(9);
 
         int actual = radio.getUpVolum();
         int expected = 9;
@@ -58,7 +58,7 @@ class RadiomanTest {
     void test5UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(3);
+        radio.setVolumeUp(3);
 
         int actual = radio.getUpVolum();
         int expected = 3;
@@ -70,7 +70,7 @@ class RadiomanTest {
     void test6UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setUpVolume(-10);
+        radio.setVolumeUp(-10);
 
         int actual = radio.getUpVolum();
         int expected = 10;
@@ -82,7 +82,7 @@ class RadiomanTest {
     void test1DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setDownVolume(0);
+        radio.setVolumeDown(0);
 
         int actual = radio.getDownVolume();
         int expected = 0;
@@ -94,7 +94,7 @@ class RadiomanTest {
     void test2DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setDownVolume(-2);
+        radio.setVolumeDown(-2);
 
         int actual = radio.getDownVolume();
         int expected = 0;
@@ -106,7 +106,7 @@ class RadiomanTest {
     void test3DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setDownVolume(5);
+        radio.setVolumeDown(5);
 
         int actual = radio.getDownVolume();
         int expected = 5;
@@ -118,7 +118,7 @@ class RadiomanTest {
     void test4DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setDownVolume(11);
+        radio.setVolumeDown(11);
 
         int actual = radio.getDownVolume();
         int expected = 0;
@@ -131,7 +131,7 @@ class RadiomanTest {
     void test1UpStation() {
         Radioman radio = new Radioman();
 
-        radio.setNext(11);
+        radio.setStationNext(11);
 
         int actual = radio.getUpStation();
         int expected = 0;
@@ -143,7 +143,7 @@ class RadiomanTest {
     void test2UpStation() {
         Radioman radio = new Radioman();
 
-        radio.setNext(5);
+        radio.setStationNext(5);
 
         int actual = radio.getUpStation();
         int expected = 6;
@@ -155,7 +155,7 @@ class RadiomanTest {
     void test3UpStation() {
         Radioman radio = new Radioman();
 
-        radio.setNext(10);
+        radio.setStationNext(10);
 
         int actual = radio.getUpStation();
         int expected = 0;
@@ -167,7 +167,7 @@ class RadiomanTest {
     void test4UpStation() {
         Radioman radio = new Radioman();
 
-        radio.setNext(-1);
+        radio.setStationNext(-1);
 
         int actual = radio.getUpStation();
         int expected = 0;
@@ -179,7 +179,7 @@ class RadiomanTest {
     void test5UpStation() {
         Radioman radio = new Radioman();
 
-        radio.setNext(-4);
+        radio.setStationNext(-4);
 
         int actual = radio.getUpStation();
         int expected = 0;
@@ -191,7 +191,7 @@ class RadiomanTest {
     void test1DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(5);
+        radio.setStationPrev(5);
 
         int actual = radio.getDownStation();
         int expected = 4;
@@ -203,7 +203,7 @@ class RadiomanTest {
     void test2DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(6);
+        radio.setStationPrev(6);
 
         int actual = radio.getDownStation();
         int expected = 5;
@@ -215,7 +215,7 @@ class RadiomanTest {
     void test3DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(0);
+        radio.setStationPrev(0);
 
         int actual = radio.getDownStation();
         int expected = 9;
@@ -227,7 +227,7 @@ class RadiomanTest {
     void test4DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(-3);
+        radio.setStationPrev(-3);
 
         int actual = radio.getDownStation();
         int expected = 9;
@@ -239,7 +239,7 @@ class RadiomanTest {
     void test5DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(4);
+        radio.setStationPrev(4);
 
         int actual = radio.getDownStation();
         int expected = 3;
@@ -251,7 +251,7 @@ class RadiomanTest {
     void test6DownStation() {
         Radioman radio = new Radioman();
 
-        radio.setPrev(11);
+        radio.setStationPrev(11);
 
         int actual = radio.getDownStation();
         int expected = 9;

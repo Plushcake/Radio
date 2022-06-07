@@ -15,9 +15,18 @@ public class Radioman {
 
 
     //Звук.
+    public void setVolumeUp(int enterVolumeUp) {
+        this.enterVolumeUp = enterVolumeUp;
+        upVolume(enterVolumeUp);
+    }
+
+    public void setVolumeDown(int enterVolumeDown) {
+        this.enterVolumeDown = enterVolumeDown;
+        downVolume(enterVolumeDown);
+    }
 
     //Звук больше.
-    public void setUpVolume(int enterVolumeUp) {
+    public void upVolume(int enterVolumeUp) {
         this.enterVolumeUp = enterVolumeUp;
         if (enterVolumeUp <= maxStation && enterVolumeUp >= minVolume) {
             return;
@@ -25,11 +34,12 @@ public class Radioman {
     }
 
     public int getUpVolum() {
+
         return enterVolumeUp;
     }
 
     //Звук меньше.
-    public void setDownVolume(int enterVolumeDown) {
+    public void downVolume(int enterVolumeDown) {
         this.enterVolumeDown = enterVolumeDown;
         if (enterVolumeDown <= maxVolume && enterVolumeDown >= minVolume) {
             return;
@@ -42,9 +52,18 @@ public class Radioman {
     }
 
     //Радиостанция.
+    public void setStationNext(int enterStationUp) {
+        this.enterStationUp = enterStationUp;
+        next(enterStationUp);
+    }
+
+    public void setStationPrev(int enterStationDown) {
+        this.enterStationDown = enterStationDown;
+        prev(enterStationDown);
+    }
 
     //Станция вперед.
-    public void setUpStation(int enterStationUp) {
+    public void upStation(int enterStationUp) {
         this.enterStationUp = enterStationUp;
         if (enterStationUp <= maxStation && enterStationUp >= minStation) {
             return;
@@ -58,7 +77,7 @@ public class Radioman {
     }
 
     //Станция назад.
-    public void setDownStation(int enterStationDown) {
+    public void downStation(int enterStationDown) {
         this.enterStationDown = enterStationDown;
         if (enterStationDown <= maxStation && enterStationDown >= minStation) {
             return;
@@ -85,17 +104,17 @@ public class Radioman {
     }
 
     //Кнопка Next.
-    public void setNext(int enterStationUp) {
+    public void next(int enterStationUp) {
         this.enterStationUp = enterStationUp;
         enterStationUp++;
-        setUpStation(enterStationUp);
+        upStation(enterStationUp);
     }
 
     //Кнопка Prev.
-    public void setPrev(int enterStationDown) {
+    public void prev(int enterStationDown) {
         this.enterStationDown = enterStationDown;
         enterStationDown--;
-        setDownStation(enterStationDown);
+        downStation(enterStationDown);
     }
 
 }
