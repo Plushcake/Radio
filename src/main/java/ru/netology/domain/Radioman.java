@@ -15,78 +15,60 @@ public class Radioman {
 
 
     //Звук.
-    public void setVolumeDateUp(int enterVolumeUp) {
+
+    //Звук больше.
+    public void setUpVolume(int enterVolumeUp) {
         this.enterVolumeUp = enterVolumeUp;
+        if (enterVolumeUp <= maxStation && enterVolumeUp >= minVolume) {
+            return;
+        } else this.enterVolumeUp = maxVolume;
     }
 
-    public void setVolumeDateDown(int enterVolumeDown) {
-        this.enterVolumeDown = enterVolumeDown;
-    }
-
-    public int getVolumeDateUp() {
+    public int getUpVolum() {
         return enterVolumeUp;
     }
 
-    public int getVolumeDateDown() {
+    //Звук меньше.
+    public void setDownVolume(int enterVolumeDown) {
+        this.enterVolumeDown = enterVolumeDown;
+        if (enterVolumeDown <= maxVolume && enterVolumeDown >= minVolume) {
+            return;
+
+        } else this.enterVolumeDown = minVolume;
+    }
+
+    public int getDownVolume() {
         return enterVolumeDown;
     }
 
-    //Звук больше.
-    public void upVolume() {
-        if (enterVolumeUp <= maxStation);
-
-        if (enterVolumeUp >= maxVolume) {
-            enterVolumeUp = maxVolume;
-        }
-    }
-
-    //Звук меньше.
-    public void downVolume() {
-        if (enterVolumeDown <= maxVolume) {
-
-        }if (enterVolumeDown < minVolume) {
-            enterVolumeDown = minVolume;
-        }
-
-    }
-
     //Радиостанция.
-    public void setDataStantionUp(int enterStationUp) {
+
+    //Станция вперед.
+    public void setUpStation(int enterStationUp) {
         this.enterStationUp = enterStationUp;
+        if (enterStationUp <= maxStation && enterStationUp >= minStation) {
+            return;
+
+        } else this.enterStationUp = 0;
+        return;
     }
 
-    public void setDataStantionDown(int enterStationDown) {
-        this.enterStationDown = enterStationDown;
-    }
-
-    public int getDataStantionUp() {
+    public int getUpStation() {
         return enterStationUp;
     }
 
-    public int getDataStantionDown() {
-        return enterStationDown;
-    }
-
-    //Станция вперед.
-    public void upStation() {
-        if (enterStationUp <= maxStation) {
-            enterStationUp = enterStationUp + 1;
-        }
-        if (enterStationUp >= 10) {
-            enterStationUp = minStation;
-            return;
-        }
-    }
-
     //Станция назад.
-    public void downStation() {
-        if (enterStationDown <= maxStation) {
-            enterStationDown = enterStationDown - 1;
-        }
-        if (enterStationDown <= -1 | enterStationDown > 10) {
-            enterStationDown = maxStation;
+    public void setDownStation(int enterStationDown) {
+        this.enterStationDown = enterStationDown;
+        if (enterStationDown <= maxStation && enterStationDown >= minStation) {
             return;
-        }
+
+        } else this.enterStationDown = 9;
+        return;
+    }
+
+    public int getDownStation() {
+        return enterStationDown;
     }
 
     //Ввод значения пользователем - радиостанция.
@@ -95,7 +77,7 @@ public class Radioman {
         if (switchingData <= maxStation & switchingData >= minStation) {
             return;
         }
-            this.switchingData = 0;
+        this.switchingData = 0;
     }
 
     public int getSwitchingData() {
@@ -103,13 +85,17 @@ public class Radioman {
     }
 
     //Кнопка Next.
-    public void next() {
-        setDataStantionUp(enterStationUp);
+    public void setNext(int enterStationUp) {
+        this.enterStationUp = enterStationUp;
+        enterStationUp++;
+        setUpStation(enterStationUp);
     }
 
     //Кнопка Prev.
-    public void prev() {
-        setDataStantionDown(enterStationDown);
+    public void setPrev(int enterStationDown) {
+        this.enterStationDown = enterStationDown;
+        enterStationDown--;
+        setDownStation(enterStationDown);
     }
 
 }

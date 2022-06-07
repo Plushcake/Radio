@@ -10,10 +10,9 @@ class RadiomanTest {
     void test1UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateUp(14);
-        radio.upVolume();
+        radio.setUpVolume(14);
 
-        int actual = radio.getVolumeDateUp();
+        int actual = radio.getUpVolum();
         int expected = 10;
 
         assertEquals(actual, expected);
@@ -23,10 +22,9 @@ class RadiomanTest {
     void test2UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateUp(0);
-        radio.upVolume();
+        radio.setUpVolume(0);
 
-        int actual = radio.getVolumeDateUp();
+        int actual = radio.getUpVolum();
         int expected = 0;
 
         assertEquals(actual, expected);
@@ -36,10 +34,9 @@ class RadiomanTest {
     void test3UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateUp(11);
-        radio.upVolume();
+        radio.setUpVolume(11);
 
-        int actual = radio.getVolumeDateUp();
+        int actual = radio.getUpVolum();
         int expected = 10;
 
         assertEquals(actual, expected);
@@ -49,11 +46,34 @@ class RadiomanTest {
     void test4UpVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateUp(9);
-        radio.upVolume();
+        radio.setUpVolume(9);
 
-        int actual = radio.getVolumeDateUp();
+        int actual = radio.getUpVolum();
         int expected = 9;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test5UpVolume() {
+        Radioman radio = new Radioman();
+
+        radio.setUpVolume(3);
+
+        int actual = radio.getUpVolum();
+        int expected = 3;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test6UpVolume() {
+        Radioman radio = new Radioman();
+
+        radio.setUpVolume(-10);
+
+        int actual = radio.getUpVolum();
+        int expected = 10;
 
         assertEquals(actual, expected);
     }
@@ -62,10 +82,9 @@ class RadiomanTest {
     void test1DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateDown(0);
-        radio.downVolume();
+        radio.setDownVolume(0);
 
-        int actual = radio.getVolumeDateDown();
+        int actual = radio.getDownVolume();
         int expected = 0;
 
         assertEquals(actual, expected);
@@ -75,10 +94,9 @@ class RadiomanTest {
     void test2DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateDown(-2);
-        radio.downVolume();
+        radio.setDownVolume(-2);
 
-        int actual = radio.getVolumeDateDown();
+        int actual = radio.getDownVolume();
         int expected = 0;
 
         assertEquals(actual, expected);
@@ -88,10 +106,9 @@ class RadiomanTest {
     void test3DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateDown(5);
-        radio.downVolume();
+        radio.setDownVolume(5);
 
-        int actual = radio.getVolumeDateDown();
+        int actual = radio.getDownVolume();
         int expected = 5;
 
         assertEquals(actual, expected);
@@ -101,11 +118,10 @@ class RadiomanTest {
     void test4DownVolume() {
         Radioman radio = new Radioman();
 
-        radio.setVolumeDateDown(11);
-        radio.downVolume();
+        radio.setDownVolume(11);
 
-        int actual = radio.getVolumeDateDown();
-        int expected = 11;
+        int actual = radio.getDownVolume();
+        int expected = 0;
 
         assertEquals(actual, expected);
     }
@@ -115,12 +131,10 @@ class RadiomanTest {
     void test1UpStation() {
         Radioman radio = new Radioman();
 
-        radio.next();
-        radio.setDataStantionUp(3);
-        radio.upStation();
+        radio.setNext(11);
 
-        int actual = radio.getDataStantionUp();
-        int expected = 4;
+        int actual = radio.getUpStation();
+        int expected = 0;
 
         assertEquals(actual, expected);
     }
@@ -129,12 +143,10 @@ class RadiomanTest {
     void test2UpStation() {
         Radioman radio = new Radioman();
 
-        radio.next();
-        radio.setDataStantionUp(8);
-        radio.upStation();
+        radio.setNext(5);
 
-        int actual = radio.getDataStantionUp();
-        int expected = 9;
+        int actual = radio.getUpStation();
+        int expected = 6;
 
         assertEquals(actual, expected);
     }
@@ -143,11 +155,9 @@ class RadiomanTest {
     void test3UpStation() {
         Radioman radio = new Radioman();
 
-        radio.next();
-        radio.setDataStantionUp(10);
-        radio.upStation();
+        radio.setNext(10);
 
-        int actual = radio.getDataStantionUp();
+        int actual = radio.getUpStation();
         int expected = 0;
 
         assertEquals(actual, expected);
@@ -157,12 +167,22 @@ class RadiomanTest {
     void test4UpStation() {
         Radioman radio = new Radioman();
 
-        radio.next();
-        radio.setDataStantionUp(7);
-        radio.upStation();
+        radio.setNext(-1);
 
-        int actual = radio.getDataStantionUp();
-        int expected = 8;
+        int actual = radio.getUpStation();
+        int expected = 0;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test5UpStation() {
+        Radioman radio = new Radioman();
+
+        radio.setNext(-4);
+
+        int actual = radio.getUpStation();
+        int expected = 0;
 
         assertEquals(actual, expected);
     }
@@ -171,11 +191,9 @@ class RadiomanTest {
     void test1DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(5);
-        radio.downStation();
+        radio.setPrev(5);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 4;
 
         assertEquals(actual, expected);
@@ -185,11 +203,9 @@ class RadiomanTest {
     void test2DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(6);
-        radio.downStation();
+        radio.setPrev(6);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 5;
 
         assertEquals(actual, expected);
@@ -199,11 +215,9 @@ class RadiomanTest {
     void test3DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(0);
-        radio.downStation();
+        radio.setPrev(0);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 9;
 
         assertEquals(actual, expected);
@@ -213,37 +227,33 @@ class RadiomanTest {
     void test4DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(-3);
-        radio.downStation();
+        radio.setPrev(-3);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 9;
 
         assertEquals(actual, expected);
     }
+
     @Test
     void test5DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(4);
-        radio.downStation();
+        radio.setPrev(4);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 3;
 
         assertEquals(actual, expected);
     }
+
     @Test
     void test6DownStation() {
         Radioman radio = new Radioman();
 
-        radio.prev();
-        radio.setDataStantionDown(11);
-        radio.downStation();
+        radio.setPrev(11);
 
-        int actual = radio.getDataStantionDown();
+        int actual = radio.getDownStation();
         int expected = 9;
 
         assertEquals(actual, expected);
