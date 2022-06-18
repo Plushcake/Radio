@@ -5,8 +5,121 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadiomanTest {
-    //Звук.
     @Test
+    void test1Station() {
+        Radioman radio = new Radioman();
+
+        radio.setStationСalculation(-11);
+        radio.station();
+
+        int actual = radio.getStation();
+        int expected = 9;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test2Station() {
+        Radioman radio = new Radioman();
+
+        radio.setStationСalculation(12);
+        radio.station();
+
+        int actual = radio.getStation();
+        int expected = 0;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test3Station() {
+        Radioman radio = new Radioman();
+
+        radio.setStationСalculation(5);
+        radio.station();
+
+        int actual = radio.getStation();
+        int expected = 5;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test1VolumeUp() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(5);
+        radio.volumeUp();
+
+        int actual = radio.getVolume();
+        int expected = 6;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test2VolumeUp() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(11);
+        radio.volumeUp();
+
+        int actual = radio.getVolume();
+        int expected = 10;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test3VolumeUp() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(-2);
+        radio.volumeUp();
+
+        int actual = radio.getVolume();
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test1VolumeDown() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(5);
+        radio.volumeDown();
+
+        int actual = radio.getVolume();
+        int expected = 4;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test2VolumeDown() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(-1);
+        radio.volumeDown();
+
+        int actual = radio.getVolume();
+        int expected = 0;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test3VolumeDown() {
+        Radioman radio = new Radioman();
+
+        radio.setVolumeСalculation(12);
+        radio.volumeDown();
+
+        int actual = radio.getVolume();
+        int expected = 10;
+        assertEquals(actual, expected);
+    }
+}
+
+
+//Звук.
+  /*  @Test
     void test1UpVolume() {
         Radioman radio = new Radioman();
 
@@ -309,4 +422,5 @@ class RadiomanTest {
         assertEquals(actual, expected);
     }
 
-}
+   */
+

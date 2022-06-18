@@ -6,27 +6,86 @@ public class Radioman {
     private int minVolume = 0;
     private int minStation = 0;
 
-    private int enterStationUp;
-    private int enterStationDown;
-    private int enterVolumeUp;
-    private int enterVolumeDown;
+    //private int enterStationUp;
+    //private int enterStationDown;
+    //private int enterVolumeUp;
+    //private int enterVolumeDown;
 
-    private int switchingData = 5;
+    //private int switchingData = 5;
+
+    private int enterStation;
+    private int enterVolume;
+
+
+    public void setStationСalculation(int enterStation) {
+        this.enterStation = enterStation;
+    }
+
+    public void station() {
+        if (enterStation <= 9 && enterStation >= 0) {
+            setStationСalculation(enterStation);
+            return;
+        } else if (enterStation >= 10) {
+            setStationСalculation(minStation);
+            return;
+        }
+        setStationСalculation(maxStation);
+        return;
+    }
+
+
+    public int getStation() {
+        return enterStation;
+    }
+
+    public void setVolumeСalculation(int enterVolume) {
+        this.enterVolume = enterVolume;
+    }
+
+    public void volumeUp() {
+        enterVolume++;
+        if (enterVolume <= 10 && enterVolume >= 0) {
+            setVolumeСalculation(enterVolume);
+            return;
+        } else if (enterVolume >= 11) {
+            setVolumeСalculation(maxVolume);
+            return;
+        }
+        setVolumeСalculation(minVolume);
+        return;
+    }
+
+    public void volumeDown() {
+        enterVolume--;
+        if (enterVolume <= 10 && enterVolume >= 0) {
+            setVolumeСalculation(enterVolume);
+            return;
+        } else if (enterVolume <= -1) {
+            setVolumeСalculation(minVolume);
+            return;
+        }
+        setVolumeСalculation(maxVolume);
+        return;
+    }
+
+    public int getVolume() {
+        return enterVolume;
+    }
 
 
     //Звук.
-    public void setVolumeUp(int enterVolumeUp) {
+    /*public void setVolumeUp(int enterVolumeUp) {
         this.enterVolumeUp = enterVolumeUp;
         upVolume(enterVolumeUp);
     }
 
-    public void setVolumeDown(int enterVolumeDown) {
+     public void setVolumeDown(int enterVolumeDown) {
         this.enterVolumeDown = enterVolumeDown;
         downVolume(enterVolumeDown);
-    }
+
 
     //Звук больше.
-    public void upVolume(int enterVolumeUp) {
+    public void upVolume(int enterStationUp) {
         this.enterVolumeUp = enterVolumeUp;
         if (enterVolumeUp <= maxStation && enterVolumeUp >= minVolume) {
             return;
@@ -73,6 +132,7 @@ public class Radioman {
     }
 
     public int getUpStation() {
+
         return enterStationUp;
     }
 
@@ -100,7 +160,7 @@ public class Radioman {
     }
 
     public int getSwitchingData() {
-        return switchingData;
+        return this.switchingData;
     }
 
     //Кнопка Next.
@@ -116,5 +176,7 @@ public class Radioman {
         enterStationDown--;
         downStation(enterStationDown);
     }
+
+     */
 
 }
