@@ -42,6 +42,18 @@ class RadiomanTest {
     }
 
     @Test
+    void test4RadioNext() {
+        Radioman radio = new Radioman();
+
+        radio.setRadio(10);
+        radio.nextRadio();
+        int actual = radio.getRadio();
+        int expected = 1;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
     void test1RadioPrev() {
         Radioman radio = new Radioman();
 
@@ -59,6 +71,32 @@ class RadiomanTest {
         Radioman radio = new Radioman();
 
         radio.setRadio(11);
+        radio.prevRadio();
+
+        int actual = radio.getRadio();
+        int expected = 9;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test3RadioPrev() {
+        Radioman radio = new Radioman();
+
+        radio.setRadio(0);
+        radio.prevRadio();
+
+        int actual = radio.getRadio();
+        int expected = 9;
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void test4RadioPrev() {
+        Radioman radio = new Radioman();
+
+        radio.setRadio(10);
         radio.prevRadio();
 
         int actual = radio.getRadio();
@@ -117,25 +155,6 @@ class RadiomanTest {
         int expected = 0;
 
         assertEquals(actual, expected);
-    }
-
-    @Test
-    public void test1EnterStation() {
-        Radioman radiola = new Radioman(10);
-
-        radiola.setRadio(9);
-
-        assertEquals(9, radiola.getRadio());
-
-    }
-
-    @Test
-    public void test2EnterStation() {
-        Radioman radiola = new Radioman(10);
-
-        radiola.setRadio(0);
-
-        assertEquals(0, radiola.getRadio());
     }
 
 }

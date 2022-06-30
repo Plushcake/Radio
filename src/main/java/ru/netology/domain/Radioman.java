@@ -4,17 +4,8 @@ public class Radioman {
     private int radio;
     private int volume;
 
-    private int maxStation = 9;
-
-    public Radioman() {
-        maxStation = 9;
-    }
-
-    public Radioman(int stationsCount) {
-        maxStation = stationsCount - 1;
-    }
-
     public int getRadio() {
+
         return radio;
     }
 
@@ -22,14 +13,14 @@ public class Radioman {
         if (radio < 0) {
             return;
         }
-        if (radio > maxStation) {
+        if (radio > 9) {
             return;
         }
         this.radio = radio;
     }
 
     public void nextRadio() {
-        if (radio < maxStation) {
+        if (radio < 9) {
             radio++;
         } else {
             radio = 0;
